@@ -1,0 +1,41 @@
+# BackTrack submenu
+
+splashimage=/F4UBCD/Images/bg.xpm.gz
+foreground=FFFFFF
+background=000000
+
+title BackTrack CLI (persistent)\n\nStart command line
+set gfxpayload=1024x768x16
+kernel /BT5/casper/vmlinuz boot=casper persistent live-media-path=/BT5/casper/ text
+initrd /BT5/casper/initrd.gz
+
+title BackTrack Desktop (persisent)\n\nStart GUI desktop environment
+set gfxpayload=1024x768x16
+kernel /BT5/casper/vmlinuz boot=casper persistent live-media-path=/BT5/casper/
+initrd /BT5/casper/initrd.gz
+
+title BackTrack Stealth\n\nNo Networking enabled
+set gfxpayload=1024x768x16
+kernel /BT5/casper/vmlinuz boot=casper live-media-path=/BT5/casper/ text staticip
+initrd /BT5/casper/initrds.gz
+
+title BackTrack Forensics\n\nNo Drive or Swap Mount
+set gfxpayload=1024x768x16
+linux /BT5/casper/vmlinuz boot=casper live-media-path=/BT5/casper/ text
+initrd /BT5/casper/initrdf.gz
+
+title BackTrack no DRM\n\nNo DRM Drivers
+set gfxpayload=1024x768x16
+kernel /BT5/casper/vmlinuz boot=casperlive-media-path=/BT5/casper/ text nomodeset
+initrd /BT5/casper/initrd.gz
+
+title BackTrack Debug\n\nSafe Mode
+set gfxpayload=1024x768x16
+kernel /BT5/casper/vmlinuz boot=casper live-media-path=/BT5/casper/ text
+initrd /BT5/casper/initrd.gz
+
+title Return to Main Menu
+find --set-root /menu.lst
+configfile /menu.lst
+
+

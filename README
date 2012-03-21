@@ -1,0 +1,20 @@
+To make USB tool:
+
+1. Format disk with three partitions. Curently using a 16GB USB but I recommend more space, especially for persistant BackTrack.
+
+	BOOT - FAT-32, ~3GiB. Must fit FalconFour disk  contents and the BackTrack live disk contents.
+	
+	TABLES - FAT-32, ~9GiB. Must fit any Ophcrack tables required. FAT-32 isn't essential but makes it easier to access from non-linux OS.
+	
+	BACKTRACK - ext3/4, ~5GiB. Used for the persistent BackTrack instance. I would recommend more than 5GiB.
+	
+2. Follow FalconFour instructions for installing GRUB4DOS to BOOT partition.
+	
+3. Extract FalconFour to root of BOOT. Make BT5 folder on BOOT and extract BackTrack there.
+
+4. Replace menu.lst with menu.lst and btsubmenu.lst, or make your own.
+
+5. Place required tables in TABLES partition.
+
+6. Boom. Should be good to go.
+	
